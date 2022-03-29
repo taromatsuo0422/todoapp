@@ -4,7 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClientReqest extends FormRequest
+class ClientRequest extends FormRequest
+
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,7 +17,7 @@ class ClientReqest extends FormRequest
         if ($this->path() == '/') {
             return true;
         } else {
-            return false;
+            return true;
         }
     }
 
