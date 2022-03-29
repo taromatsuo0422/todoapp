@@ -115,8 +115,7 @@
       <div class="todo">
         <form action="/todo/create" method="post" class="input-data">
         @csrf
-        <input type="hidden" name="_token" value="todo">
-        <input type="text" class="input-add" name="content">
+        <input type="text" class="input-add" name="create">
         <input type="submit" class="button-add" value="追加">
         </form>
         <table>
@@ -131,7 +130,6 @@
             <td></td>
             <form action="/todo/update?id" method="post">
             @csrf
-            <input type="hidden" name="_token" value="">
               <td>
               <input type="text" class="input-update" value="" name="content" />
               </td>
@@ -142,7 +140,6 @@
             <td>
               <form action="/todo/delete?id" method="post">
               @csrf
-              <input type="hidden" name="_token" value="">
               <button class= "button-delete">削除</button>
               </form>
             </td>
