@@ -126,8 +126,11 @@
             <th>削除</th>
           </tr>
         <!--ここから更新、削除項目-->
+        @foreach( $items as $item)
           <tr>
-            <td></td>
+            <td>
+              {{ $item->content }}
+            </td>
             <form action="/todo/update?id" method="post">
             @csrf
               <td>
@@ -144,6 +147,7 @@
               </form>
             </td>
           </tr>
+        @endforeach
         </table>
       </div>
     </div>
