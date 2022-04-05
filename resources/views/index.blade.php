@@ -115,7 +115,7 @@
       <div class="todo">
         <form action="/todo/create" method="post" class="input-data">
         @csrf
-        <input type="text" class="input-add" name="create">
+        <input type="text" class="input-add" name="content">
         <input type="submit" class="button-add" value="追加">
         </form>
         <table>
@@ -134,7 +134,7 @@
             <form action="/todo/update?id" method="post">
             @csrf
               <td>
-              <input type="text" class="input-update" value="" name="content" />
+              <input type="text" class="input-update" value="" name="" />
               </td>
               <td>
               <button class= "button-update">更新</button>
