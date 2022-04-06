@@ -129,13 +129,13 @@
         @foreach( $items as $item)
           <tr>
             <td>
-              {{ $item->content }}
+              {{ $item->created_at }}
             </td>
+            <td>
+              <input type="text" class="input-update" name="content" value="{{ $item->content }}">
+            </td> 
             <form action="/todo/update?id" method="post">
             @csrf
-              <td>
-              <input type="text" class="input-update" value="" name="" />
-              </td>
               <td>
               <button class= "button-update">更新</button>
               </td>

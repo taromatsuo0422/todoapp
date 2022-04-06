@@ -16,6 +16,7 @@ class TodoController extends Controller
     public function create(ClientRequest $request)
     {
         $form = $request->all();
+        unset($form['_token']);
         Todo::create($form);
         return redirect('/');
     }
@@ -23,11 +24,8 @@ class TodoController extends Controller
     {
         dd($request->all());
         $form = $request->all();
-        dd($form);
         unset($form['_token']);
-        return response()->json([
-        'form' => $form
-    ]);
+        return redirect('/');
     }
 
 }
