@@ -20,7 +20,6 @@ class TodoController extends Controller
         Todo::create($form);
         return redirect('/');
     }
-
     public function update(ClientRequest $request)
     {
         $form = $request->all();
@@ -28,5 +27,9 @@ class TodoController extends Controller
         Todo::where('id', $request->id)->update($form);
         return redirect('/');
     }
-
+    public function delete(ClientRequest $request)
+    {
+        Todo::find('id',$request->id)->delete($form);
+        return redirect('/');
+    }
 }

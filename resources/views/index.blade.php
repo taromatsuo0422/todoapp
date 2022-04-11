@@ -131,13 +131,10 @@
             <td>
               {{ $item->created_at }}
             </td>
-            <td>
-              <input type="text" class="input-update" name="content" value="{{ $item->content }}">
-            </td> 
             <form action="/todo/update?id={{$item->id}}" method="post">
             @csrf
               <td>
-              <input type="hidden" class="input-update" name="content" value="{{ $item->content }}">
+              <input type="text" class="input-update" name="content" value="{{ $item->content }}">
               <button class= "button-update">更新</button>
               </td>
             </form>
