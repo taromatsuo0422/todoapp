@@ -134,14 +134,15 @@
             <td>
               <input type="text" class="input-update" name="content" value="{{ $item->content }}">
             </td> 
-            <form action="/todo/update?id" method="post">
+            <form action="/todo/update?id={{$item->id}}" method="post">
             @csrf
               <td>
+              <input type="hidden" class="input-update" name="content" value="{{ $item->content }}">
               <button class= "button-update">更新</button>
               </td>
             </form>
             <td>
-              <form action="/todo/delete?id" method="post">
+              <form action="/todo/delete?id={{$item->id}}" method="post">
               @csrf
               <button class= "button-delete">削除</button>
               </form>
