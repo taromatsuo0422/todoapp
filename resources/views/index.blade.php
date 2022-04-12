@@ -106,12 +106,22 @@
       border-color: #71fadc;
       color: #fff;
     }
+    ul{
+      display: block;
+      font-size:100%;
+      width: 500px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card">
       <p class="title">Todo List</p>
+      @if (count($errors) > 0)
+        <ul>
+        <li>The content field is required.</li>
+        </ul>
+      @endif
       <div class="todo">
         <form action="/todo/create" method="post" class="input-data">
         @csrf
@@ -135,6 +145,8 @@
             @csrf
               <td>
               <input type="text" class="input-update" name="content" value="{{ $item->content }}">
+              </td>
+              <td>  
               <button class= "button-update">更新</button>
               </td>
             </form>
